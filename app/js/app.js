@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     onMouseClick: function (event) {
                         /*                     $(`.district[data-ident="${this.region.ident}"] .items`).show();
                     $(`.district[data-ident!="${this.region.ident}"] .items`).hide(); */
+                        resetDistrictHiddens();
                         $(`.district[data-ident="${this.region.ident}"]`).show();
                         $(`.district[data-ident!="${this.region.ident}"]`).hide();
                     },
@@ -72,8 +73,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // click on Belarus
     $('[data-for-ident]').on('click', function () {
         const attrVal = $(this).attr('data-for-ident');
-        console.log(attrVal);
 
+        resetDistrictHiddens();
         $(`.district[data-ident="${attrVal}"]`).show();
         $(`.district[data-ident!="${attrVal}"]`).hide();
     });
@@ -88,6 +89,8 @@ function resetDistrictHiddens() {
     $('.district').hide();
     $('.district').find('*').show();
 }
+
+
 
 // Search
 $('.search__icon').on('click', search);
