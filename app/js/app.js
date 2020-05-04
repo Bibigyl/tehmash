@@ -14,52 +14,52 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Russian map
     const $mapTooltip = $('#map__tooltip');
-    let handleDistrictMove;
+    let   handleDistrictMove;
 
-    fetch('../libs/with-districts.json').then(function (response) {
-        response.json().then(function (data) {
-            new RussianMap(
-                {
-                    viewPort: data.viewPort,
-                    mapId: 'russian-map',
-                    width: 862,
-                    height: 497,
-                    // дефолтовые атрибуты для контуров регионов
-                    defaultAttr: {
-                        fill: '#0053a1', // цвет которым закрашивать
-                        stroke: '#ffffff', // цвет границы
-                        'stroke-width': 1, // ширина границы
-                        'stroke-linejoin': 'round', // скруглять углы
-                    },
-                    mouseMoveAttr: {
-                        fill: '#4e94d6',
-                    },
-                    onMouseMove: function (event) {
-                        $mapTooltip.show();
-                        $mapTooltip.text(this.region.name);
-
-                        handleDistrictMove = $('#russian-map').mousemove((event) => {
-                            $mapTooltip
-                                .css('left', event.pageX + 10 + 'px')
-                                .css('top', event.pageY + 10 + 'px');
-                        });
-                    },
-                    onMouseOut: function (event) {
-                        handleDistrictMove = null;
-                        $mapTooltip.hide();
-                    },
-                    onMouseClick: function (event) {
-                        /*                     $(`.district[data-ident="${this.region.ident}"] .items`).show();
-                    $(`.district[data-ident!="${this.region.ident}"] .items`).hide(); */
-                        resetDistrictHiddens();
-                        $(`.district[data-ident="${this.region.ident}"]`).show();
-                        $(`.district[data-ident!="${this.region.ident}"]`).hide();
-                    },
+    let buildMap = function (data) {
+        new RussianMap(
+            {
+                viewPort: data.viewPort,
+                mapId: 'russian-map',
+                width: 862,
+                height: 497,
+                // дефолтовые атрибуты для контуров регионов
+                defaultAttr: {
+                    fill: '#0053a1', // цвет которым закрашивать
+                    stroke: '#ffffff', // цвет границы
+                    'stroke-width': 1, // ширина границы
+                    'stroke-linejoin': 'round', // скруглять углы
                 },
-                data.regions
-            );
-        });
-    });
+                mouseMoveAttr: {
+                    fill: '#4e94d6',
+                },
+                onMouseMove: function (event) {
+                    $mapTooltip.show();
+                    $mapTooltip.text(this.region.name);
+
+                    handleDistrictMove = $('#russian-map').mousemove((event) => {
+                        $mapTooltip
+                            .css('left', event.pageX + 10 + 'px')
+                            .css('top', event.pageY + 10 + 'px');
+                    });
+                },
+                onMouseOut: function (event) {
+                    handleDistrictMove = null;
+                    $mapTooltip.hide();
+                },
+                onMouseClick: function (event) {
+                    /*                     $(`.district[data-ident="${this.region.ident}"] .items`).show();
+                $(`.district[data-ident!="${this.region.ident}"] .items`).hide(); */
+                    resetDistrictHiddens();
+                    $(`.district[data-ident="${this.region.ident}"]`).show();
+                    $(`.district[data-ident!="${this.region.ident}"]`).hide();
+                },
+            },
+            data.regions
+        );
+    };
+
+    buildMap(mapWithDistricts);
 
     // Setting colors in list of addresses
     //colorAddresses();
