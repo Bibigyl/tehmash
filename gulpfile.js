@@ -1,10 +1,10 @@
 // VARIABLES & PATHS
 
-let preprocessor = 'scss', // Preprocessor (sass, scss, less, styl)
-    fileswatch   = 'html,htm,txt,json,md,woff2', // List of files extensions for watching & hard reload (comma separated)
-    imageswatch  = 'jpg,jpeg,png,webp,svg', // List of images extensions for watching & compression (comma separated)
-    baseDir      = 'app', // Base directory path without «/» at the end
-    online       = true; // If «false» - Browsersync will work offline without internet connection
+let preprocessor = 'scss',
+    fileswatch   = 'html,htm,txt,json,md,woff2',
+    imageswatch  = 'jpg,jpeg,png,webp,svg',
+    baseDir      = 'app',
+    online       = true;
 
 let paths = {
 
@@ -17,38 +17,35 @@ let paths = {
             'app/libs/russian-map.js',
 			baseDir + '/js/app.js' // app.js. Always at the end
 		],
-		dest: baseDir + '/dist',
+		dest: baseDir + '/js',
 	},
 
 	styles: {
 		src:  baseDir + '/' + preprocessor + '/main.*',
-		dest: baseDir + '/dist',
+		dest: baseDir + '/css',
 	},
 
 	images: {
-		src:  baseDir + '/images/**/*',
-		dest: baseDir + '/dist/images',
+		src:  baseDir + '/images/src/**/*',
+		dest: baseDir + '/images/dest',
 	},
 
 	deploy: {
 		hostname:    'username@yousite.com', // Deploy hostname
-		destination: 'yousite/public_html/', // Deploy destination
+		destination: 'https://bibigyl.github.io/tehmash/', // Deploy destination
 		include:     [/* '*.htaccess' */], // Included files to deploy
 		exclude:     [ '**/Thumbs.db', '**/*.DS_Store' ], // Excluded files from deploy
 	},
 
-	cssOutputName: 'style.css',
-	jsOutputName:  'script.js',
+	cssOutputName: 'app.min.css',
+	jsOutputName:  'app.min.js',
 
 }
 
 // LOGIC
 
 const { src, dest, parallel, series, watch } = require('gulp');
-const sass         = require('gulp-sass');
 const scss         = require('gulp-sass');
-const less         = require('gulp-less');
-const styl         = require('gulp-stylus');
 const cleancss     = require('gulp-clean-css');
 const concat       = require('gulp-concat');
 const browserSync  = require('browser-sync').create();
@@ -80,7 +77,7 @@ function styles() {
 	.pipe(eval(preprocessor)())
 	.pipe(concat(paths.cssOutputName))
 	.pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true }))
-	.pipe(cleancss( {level: { 1: { specialComments: 0 } } }))
+	//.pipe(cleancss( {level: { 1: { specialComments: 0 } } }))
 	.pipe(dest(paths.styles.dest))
 	.pipe(browserSync.stream())
 }
