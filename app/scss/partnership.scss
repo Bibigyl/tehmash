@@ -24,9 +24,14 @@
     &__item {
       font-size: 18px;
       margin-bottom: 20px;
+      position: relative;
+      padding-left: 50px;
 
       &:before {
-        display: inline-block;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
         content: '';
         width: 25px;
         height: 25px;

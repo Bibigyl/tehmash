@@ -1,0 +1,178 @@
+.contacts {
+    .main {
+        padding-top: 31px;
+        padding-bottom: 71px;
+        text-align: center;
+
+        &__main-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 7px;
+            text-transform: uppercase;
+        }
+
+        &__title {
+            font-size: 25px;
+            margin-bottom: 45px;
+            color: $blue;
+        }
+    }
+
+    .employees {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 50px;
+        padding: 0px 75px;
+    }
+
+    .emp {
+        margin: 0px 10px 20px;
+        text-align: center;
+        max-width: 240px;
+
+        &__img {
+            display: block;
+            width: 150px;
+            height: 150px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 100%;
+            border: 2px solid #5b5b5b;
+            background-position: center center;
+            background-size: cover;
+            margin-bottom: 31px;
+        }
+
+        &__surname {
+            font-size: 20px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 0px;
+            font-weight: bold;
+            line-height: 26px;
+        }
+
+        &__name {
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        &__position {
+            font-size: 18px;
+            line-height: 24px;
+            margin-bottom: 2px;
+        }
+
+        &__phone {
+            color: #2265ac;
+            font-size: 26px;
+        }
+    }
+
+    .main {
+        &__text {
+            font-size: 23px;
+            line-height: 30px;
+        }
+
+        &__logo {
+            width: 250px;
+            height: 68px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            margin-bottom: 29px;
+        }
+
+        &__phone {
+            margin-bottom: 39px;
+        }
+
+        &__site {
+            font-weight: bold;
+            font-size: 26px;
+            margin-bottom: 67px;
+        }
+
+        &__scheme {
+            height: 615px;
+
+        }
+    }
+
+    .info {
+        padding-top: 74px;
+        padding-bottom: 83px;
+
+        &__logo {
+            width: 590px;
+            height: 82px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 88px;
+        }
+
+        &__text {
+            font-size: 24px;
+            line-height: 31px;
+            margin-bottom: 32px;
+
+            &_last {
+                margin-bottom: 60px;
+            }
+
+            &_small {
+                font-size: 22px;
+                line-height: 24px;
+                margin-bottom: 8px;
+                text-align: center;
+            }
+        }
+
+        &__list {
+            font-size: 24px;
+            line-height: 31px;
+            margin-bottom: 10px;
+        }
+
+        &__item {
+            font-size: 24px;
+            line-height: 33px;
+            list-style-type: none;
+            margin-bottom: 30px;
+
+            span {
+                font-weight: bold;
+            }
+
+            a {
+                color: $dark;
+                
+            }
+        }
+
+        &__title {
+            margin-bottom: 38px;
+        }
+
+        &__phone {
+
+        }
+
+        &__post-mail {
+            margin-bottom: 8px;
+            a {
+                color: $blue;
+            }
+        }
+
+        &__site {
+            text-align: center;
+            font-size: 27px;
+            line-height: 27px;
+        }
+    }
+}

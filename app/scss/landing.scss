@@ -95,11 +95,14 @@
     }
 
     &__text {
-      text-transform: uppercase;
-      font-weight: bold;
-      font-size: 22px;
-      text-align: center;
-      padding: 69px 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 22px;
+        text-align: center;
+        padding: 15px;
+        height: 210px;
+        display: table-cell;
+        vertical-align: middle;
     }
   }
 

@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // copyright
     document.getElementById('yearNow').innerHTML = new Date().getFullYear();
 
+
     // Landing front
     $('.front').slick({
         arrows: false,
@@ -12,11 +13,12 @@ document.addEventListener('DOMContentLoaded', function () {
         fade: true,
     });
 
-    // Russian map
-    const $mapTooltip = $('#map__tooltip');
-    let   handleDistrictMove;
 
+    // Russian map
     let buildMap = function (data) {
+        const $mapTooltip = $('#map__tooltip');
+        let handleDistrictMove;
+
         new RussianMap(
             {
                 viewPort: data.viewPort,
@@ -48,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     $mapTooltip.hide();
                 },
                 onMouseClick: function (event) {
-                    /*                     $(`.district[data-ident="${this.region.ident}"] .items`).show();
+                    /* $(`.district[data-ident="${this.region.ident}"] .items`).show();
                 $(`.district[data-ident!="${this.region.ident}"] .items`).hide(); */
                     resetDistrictHiddens();
                     $(`.district[data-ident="${this.region.ident}"]`).show();
@@ -59,7 +61,10 @@ document.addEventListener('DOMContentLoaded', function () {
         );
     };
 
-    buildMap(mapWithDistricts);
+    if ($('.map-search').length !== 0) {
+        buildMap(mapWithDistricts);
+    }
+
 
     // Setting colors in list of addresses
     //colorAddresses();
@@ -70,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
         $ul.slideToggle();
     }) */
 
+
     // click on Belarus
     $('[data-for-ident]').on('click', function () {
         const attrVal = $(this).attr('data-for-ident');
@@ -78,7 +84,34 @@ document.addEventListener('DOMContentLoaded', function () {
         $(`.district[data-ident="${attrVal}"]`).show();
         $(`.district[data-ident!="${attrVal}"]`).hide();
     });
+
+
+    // Search
+    $('.search__icon').on('click', searchInDealers);
+    $('.search__input').on('search', function (evt) {
+        if ($(this).val().length > 0) {
+            searchInDealers();
+        } else {
+            resetDistrictHiddens();
+        }
+    });
+
+
+    // Pagination
+    $('.news__pagination').pagination({
+        prevText: 'Назад',
+        nextText: 'Вперед',
+        itemsOnPage: 9,
+        pages:5
+
+    });
+
+
+
 });
+
+
+
 
 /* function colorAddresses() {
     $('.district .item').filter(':odd').css("background-color", "#EAEDEC");
@@ -90,53 +123,38 @@ function resetDistrictHiddens() {
     $('.district').find('*').show();
 }
 
-
-
-// Search
-$('.search__icon').on('click', search);
-$(".search__input").on("search", function(evt){
-    if ( $(this).val().length > 0 ) {
-        search();
-    } else {
-        resetDistrictHiddens();
-    }
-});
-
-function search() {
+function searchInDealers() {
     let value = $('.search__input').val();
     let $districts = $('.district');
     let $items = $('.district .item');
 
     let $titles = $('.district__title');
     let $itemsInner = $('.district .item *');
-    let $districtsToOpen = [];
-    let $itemsToOpen = [];
-
+    let districtsToOpen = [];
+    let itemsToOpen = [];
 
     $districts.hide();
     $items.hide();
 
-    $titles.each( (i, $item) => {
+    $titles.each((i, $item) => {
         if ($item.innerText.toLowerCase().indexOf(value.toLowerCase()) >= 0) {
-            $districtsToOpen.push($item);
+            districtsToOpen.push($item);
         }
     });
 
-    $itemsInner.each( (i, $item) => {
+    $itemsInner.each((i, $item) => {
         if ($item.innerText.toLowerCase().indexOf(value.toLowerCase()) >= 0) {
-            $itemsToOpen.push($item);
+            itemsToOpen.push($item);
         }
     });
 
-    $itemsToOpen.forEach( (item, i) => {
+    itemsToOpen.forEach((item, i) => {
         $(item).closest('.district').show();
         $(item).closest('.item').show();
     });
 
-    $districtsToOpen.forEach( (item) => {
+    districtsToOpen.forEach((item) => {
         $(item).closest('.district').show();
         $(item).closest('.district').find('.item').show();
     });
 }
-
-

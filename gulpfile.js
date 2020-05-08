@@ -12,7 +12,8 @@ let paths = {
 		src: [
             'node_modules/jquery/dist/jquery.min.js',
             //'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
-            'app/libs/slick.min.js',
+            'app/libs/simplePagination/jquery.simplePagination.js',
+            'app/libs/slick/slick.min.js',
             'app/libs/raphael-min.js',
             'app/libs/russian-map.js',
 			baseDir + '/js/app.js' // app.js. Always at the end
