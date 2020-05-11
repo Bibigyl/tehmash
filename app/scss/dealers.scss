@@ -31,7 +31,7 @@
         }
     }
 
-    .section_search {
+    &.section_search {
         background-color: #c5c7c6;
     }
 
@@ -113,8 +113,6 @@
     }
 
     .district {
-        margin-bottom: 10px;
-        // удалить??
         display: none;
 
         &__title {
@@ -125,7 +123,6 @@
             padding: 3px 5px;
             background-color: $dark;
             color: $light;
-            cursor: pointer;
         }
     }
 
@@ -179,6 +176,7 @@
         }
 
         &__site-address {
+            text-align: center;
             margin-bottom: 10px;
         }
 

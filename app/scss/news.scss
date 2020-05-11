@@ -22,7 +22,7 @@
         max-width: 326px;
         margin: 0 10px 90px;
         padding-bottom: 20px;
-        
+
         &__img {
             width: 100%;
             height: 260px;
@@ -49,7 +49,6 @@
                 border-top: 12px solid transparent;
                 border-left: 13px solid #ffffff;
                 border-bottom: 12px solid transparent;
-
             }
         }
 
@@ -76,7 +75,7 @@
 
             span {
                 display: block;
-                text-align: left;                
+                text-align: left;
             }
 
             a {
@@ -105,7 +104,6 @@
                 border-bottom: 6px solid transparent;
                 margin-left: 8px;
             }
-
         }
     }
 
@@ -115,18 +113,39 @@
         display: block;
         width: fit-content;
 
+        .pagination {
+            display: flex;
+        }
+
+        .page-item {
+            margin-right: 4px;
+            margin-left: 4px;
+        }
+
         .page-link {
             background: $light;
-            box-shadow: none;
+            border: 1px solid $dark;
+            color: $dark;
+            padding: 4px 10px;
+            min-width: 30px;
+            font-size: 15px;
+            transition: 0.15s;
 
             &:hover {
-                background: #EEE;
+                background: #eee;
+                text-decoration: none;
+                transition: 0.15s;
             }
         }
 
-        .current {
-            background: $blue;
-            border-color: $blueDark;
+        .active,
+        .disabled {
+            .page-link {
+                background: $blue;
+                border-color: $blueDark;
+                color: $light;
+                cursor: default;
+            }
         }
     }
 }

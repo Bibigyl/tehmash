@@ -53,7 +53,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     /* $(`.district[data-ident="${this.region.ident}"] .items`).show();
                 $(`.district[data-ident!="${this.region.ident}"] .items`).hide(); */
                     resetDistrictHiddens();
-                    $(`.district[data-ident="${this.region.ident}"]`).show();
+                    if ( $(`.district[data-ident="${this.region.ident}"] .item`).length != 0 ) {
+                        $(`.district[data-ident="${this.region.ident}"]`).show();
+                    }
                     $(`.district[data-ident!="${this.region.ident}"]`).hide();
                 },
             },
@@ -81,7 +83,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const attrVal = $(this).attr('data-for-ident');
 
         resetDistrictHiddens();
-        $(`.district[data-ident="${attrVal}"]`).show();
+        if ( $(`.district[data-ident="${attrVal}"] .item`).length != 0 ) {
+            $(`.district[data-ident="${attrVal}"]`).show();
+        }
         $(`.district[data-ident!="${attrVal}"]`).hide();
     });
 
@@ -96,16 +100,67 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-
-    // Pagination
-    $('.news__pagination').pagination({
-        prevText: 'Назад',
-        nextText: 'Вперед',
-        itemsOnPage: 9,
-        pages:5
-
+    // Certificates
+    $('.docs').magnificPopup({
+        delegate: 'a',
+        type:'image',
+		gallery: {
+			enabled: true
+		},
+		zoom: {
+			enabled: true,
+			duration: 300
+		}
     });
 
+    // Burger
+    $('.header__burger').on('click', () => {
+
+        $('.header__nav').fadeToggle(200, () => {
+            //$('.header__nav').toggleClass('visible')
+        })
+    })
+
+    // Mobil Landing
+    if (window.screen.availWidth <= 780) {
+        $('.producers__items').slick({
+            arrows: false,
+            dots: true,
+            //prevArrow: '<button type="button" class="slick-prev slick__arrow slick__arrow_prev">&lt;</button>',
+            //nextArrow: '<button type="button" class="slick-next slick__arrow slick__arrow_next">&gt;</button>',
+            dotsClass: 'slick__dots',
+            infinite: true,
+            autoplay: true,
+            centerMode: true,
+            centerPadding: '60px',
+            //slidesToShow: 3,
+            variableWidth: true
+        });
+
+
+        $('.clients__items').slick({
+            arrows: false,
+            dots: true,
+            dotsClass: 'slick__dots',
+            infinite: true,
+            autoplay: true,
+            centerMode: true,
+            //centerPadding: '60px',
+            //slidesToShow: 3,
+        });
+
+        $('.documents .docs').slick({
+            arrows: false,
+            dots: true,
+            dotsClass: 'slick__dots',
+            infinite: true,
+            autoplay: true,
+            centerMode: true,
+            //centerPadding: '60px',
+            //slidesToShow: 3,
+            variableWidth: true,
+        });
+    }
 
 
 });

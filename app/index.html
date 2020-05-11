@@ -13,7 +13,7 @@
 
 </head>
 
-<body class="landing">
+<body>
 
     <header class="header">
         <div class="section bg-blue">
@@ -25,19 +25,19 @@
                 </div>
                 <div class="header__contacts">
                     <a href="tekhmash@mail.ru" class="header__mail">
-                        <img src="#" alt="Icon mail" class="header__mail-icon">
+                        <img src="images/dest/mail.svg" alt="Icon mail" class="header__mail-icon">
                         tekhmash@mail.ru
                     </a>
 
                     <a href="#" class="header__phone">
-                        <img src="#" alt="Icon phone" class="header__phone-icon">
+                        <img src="images/dest/phone.svg" alt="Icon phone" class="header__phone-icon">
                         (8636) 23-55-53, 23-52-35
                     </a>
                 </div>
             </div>
         </div>
 
-        <div class="section bg-light">
+        <div class="section bg-light header__nav">
             <nav class="container nav">
                 <ul class="nav__ul flex">
                     <li class="nav__li">
@@ -67,9 +67,20 @@
                 </ul>
             </nav>
         </div>
+
+        <div class="header__burger">
+            <svg class="ham hamRotate ham4" viewBox="0 0 100 100" width="60" onclick="this.classList.toggle('active')">
+                <path class="line top"
+                    d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
+                <path class="line middle" d="m 70,50 h -40" />
+                <path class="line bottom"
+                    d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
+            </svg>
+        </div>
     </header>
 
-    <div class="section">
+    
+    <div class="section landing">
         <div class="front">
             <div class="front__img" style="background-image: url(images/dest/img.jpg);"></div>
             <div class="front__img" style="background-image: url(images/dest/img.jpg);"></div>
@@ -80,7 +91,7 @@
 
     </div>
 
-    <div class="section bg-yellow">
+    <div class="section bg-yellow landing">
         <div class="container flex advantages">
             <div class="advantage__item">
                 <img src="images/dest/img.jpg" alt="" class="advantage__img">
@@ -104,39 +115,53 @@
         </div>
     </div>
 
-    <div class="section products flex bg-blue-dark">
+    <div class="section products flex bg-blue-dark landing">
         <div class="product bg-blue">
-            <img src="images/dest/img.jpg" alt="" class="product__img">
-            <div class="product__text c-light">Сельскохозяйственная техника</div>
+            <div class="product__img-wrap">
+                <img src="images/dest/img.jpg" alt="" class="product__img">
+            </div>
+
+            <a class="product__text c-light" href="/products/tex">Сельскохозяйственная техника</a>
         </div>
 
         <div class="product bg-blue">
-            <img src="images/dest/img.jpg" alt="" class="product__img">
-            <div class="product__text c-light">Конвейеры, транспортеры, элеваторное оборудование</div>
+            <div class="product__img-wrap">
+                <img src="images/dest/img.jpg" alt="" class="product__img">
+            </div>
+
+            <a class="product__text c-light" href="/products/tex">Конвейеры, транспортеры, элеваторное оборудование</a>
         </div>
 
         <div class="product bg-blue">
-            <img src="images/dest/img.jpg" alt="" class="product__img">
-            <div class="product__text c-light">Металлоконструкции, строительство</div>
+            <div class="product__img-wrap">
+                <img src="images/dest/img.jpg" alt="" class="product__img">
+            </div>
+
+            <a class="product__text c-light" href="/products/tex">Металлоконструкции, строительство</a>
         </div>
 
         <div class="product bg-blue">
-            <img src="images/dest/img.jpg" alt="" class="product__img">
-            <div class="product__text c-light">Трубопрокатное производство</div>
+            <div class="product__img-wrap">
+                <img src="images/dest/img.jpg" alt="" class="product__img">
+            </div>
+
+            <a class="product__text c-light" href="/products/tex">Трубопрокатное производство</a>
         </div>
     </div>
 
 
-    <div class="section bg-blue-dark">
+    <div class="section bg-blue-dark landing">
         <div class="container services">
             <h2 class="services__title c-light">Собственное производство</h2>
 
-            <div class="services__items flex">
+            <div class="services__items">
                 <div class="serv">
                     <img src="images/dest/img.jpg" alt="" class="serv__img">
                     <div class="serv__text c-light">
                         <h4 class="serv__title">Проектирование</h4>
-                        <p>Вся продукция завода начинает свой путь в проектном бюро завода, где инженеры проектируют в 3D каждую деталь и узел сельхозтехники, что позволяет выпускать машины высокого качества.</p>
+                        <p>Вся продукция завода начинает свой путь в проектном бюро завода, где инженеры проектируют в
+                            3D каждую деталь и узел сельхозтехники, что позволяет выпускать машины высокого качества.
+                        </p>
                     </div>
                 </div>
 
@@ -144,7 +169,8 @@
                     <img src="images/dest/img.jpg" alt="" class="serv__img">
                     <div class="serv__text c-light">
                         <h4 class="serv__title">Поставка</h4>
-                        <p>Индивидуальный подход к каждому клиенту. Поставка нашей сельхоз техники и запасных частей к ней осуществляется в договоренные сроки. Осуществляем доставку, наладку и пуск.</p>
+                        <p>Индивидуальный подход к каждому клиенту. Поставка нашей сельхоз техники и запасных частей к
+                            ней осуществляется в договоренные сроки. Осуществляем доставку, наладку и пуск.</p>
                     </div>
                 </div>
 
@@ -152,7 +178,8 @@
                     <img src="images/dest/img.jpg" alt="" class="serv__img">
                     <div class="serv__text c-light">
                         <h4 class="serv__title">Производство</h4>
-                        <p>Завод ООО «ТЕХМАШ» 15 лет занимается разработкой и производством сельскохозяйственной техники. Многолетний опыт, инновационные решения, собственное производство.</p>
+                        <p>Завод ООО «ТЕХМАШ» 15 лет занимается разработкой и производством сельскохозяйственной
+                            техники. Многолетний опыт, инновационные решения, собственное производство.</p>
                     </div>
                 </div>
 
@@ -160,17 +187,19 @@
                     <img src="images/dest/img.jpg" alt="" class="serv__img">
                     <div class="serv__text c-light">
                         <h4 class="serv__title">Сервис</h4>
-                        <p>В ассортименте запасные части в наличии. Предоставляется гарантийное и пост гарантийное обслуживание сельхозтехники.</p>
+                        <p>В ассортименте запасные части в наличии. Предоставляется гарантийное и пост гарантийное
+                            обслуживание сельхозтехники.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="section bg-light bb-blue">
+    <div class="section bg-light bb-blue landing">
         <div class="container producers">
             <h2 class="producers__title c-blue-dark">Наши поставщики комплектующих</h2>
-            <p class="producers__text c-dark">Мы работаем с ведущими европейскими компаниями-поставщиками комплектующих:</p>
+            <p class="producers__text c-dark">Мы работаем с ведущими европейскими компаниями-поставщиками комплектующих:
+            </p>
 
             <div class="producers__items flex">
                 <img src="images/dest/img.jpg" alt="" class="producers__item">
@@ -182,10 +211,12 @@
         </div>
     </div>
 
-    <div class="section bg-grey bb-blue-dark">
+    <div class="section bg-grey bb-blue-dark landing">
         <div class="container clients">
             <h2 class="clients__title c-blue-dark">Наши заказчики</h2>
-            <p class="clients__text c-dark">В числе наших многолетних партнеров: ОАО «Ростсельмаш», Агро-промышленная группа компании «Юг Руси», компания «ЭФКО», Агрокомплекс «Выселковский» (Краснодарский край), Агрохолдинг «Волгогелиопром» (Волгоградская область),  сахарные заводы  «Продимэкс» и т.д.</p>
+            <p class="clients__text c-dark">В числе наших многолетних партнеров: ОАО «Ростсельмаш», Агро-промышленная
+                группа компании «Юг Руси», компания «ЭФКО», Агрокомплекс «Выселковский» (Краснодарский край),
+                Агрохолдинг «Волгогелиопром» (Волгоградская область), сахарные заводы «Продимэкс» и т.д.</p>
 
             <div class="clients__items flex">
                 <img src="images/dest/img.jpg" alt="" class="clients__item">
@@ -197,6 +228,8 @@
             </div>
         </div>
     </div>
+
+
 
     <footer class="section bg-blue-dd">
         <div class="container footer">
@@ -246,7 +279,7 @@
         </div>
     </footer>
 
-    
+
     <script src="js/app.min.js"></script>
 
 </body>
