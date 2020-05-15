@@ -1,7 +1,9 @@
 .us {
-    max-width: 1060px;
-    padding-top: 25px;
-    padding-bottom: 40px;
+    &__container {
+        max-width: 1060px;
+        padding-top: 25px;
+        padding-bottom: 40px;
+    }
 
     &__title {
         text-align: center;
@@ -31,8 +33,8 @@
         display: inline-block;
 
         &_wide {
-            width: 100%;   
-            margin-top: 40px;         
+            width: 100%;
+            margin-top: 40px;
         }
 
         &_left {
@@ -50,18 +52,18 @@
             margin-right: 2.5%;
         }
     }
-}
 
-.documents {
-    padding-top: 40px;
+    .documents {
+        padding-top: 40px;
 
-    &__title {
-        text-align: center;
-        text-transform: uppercase;
-        font-size: 32px;
-        margin-bottom: 50px;
-        font-weight: bold;
-        color: $light;
+        &__title {
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 32px;
+            margin-bottom: 50px;
+            font-weight: bold;
+            color: $light;
+        }
     }
 
     .docs {
@@ -81,7 +83,7 @@
 }
 
 @media (min-width: 1140px) {
-    .us {
+    .us__container {
         padding-left: 110px;
         padding-right: 110px;
     }
@@ -89,19 +91,24 @@
 
 @media (max-width: 876px) {
     .us {
-        padding-right: 40px;
-        padding-left: 40px;
+        &__container {
+            padding-right: 40px;
+            padding-left: 40px;
+        }
 
         &__text_right {
             width: 100%;
             margin-top: 0;
-        }        
+        }
     }
-
 }
 
 @media (max-width: 780px) {
-    .documents {
+    .us {
+        &__title {
+            font-size: 24px;
+        }
+
         .doc__img {
             margin: 0 20px 75px 20px;
             height: 200px;
@@ -112,13 +119,7 @@
             width: 150px;
         }
 
-        &__title {
-            font-size: 24px;
-        }
-    }
-
-    .us {
-        &__title {
+        .documents__title {
             font-size: 24px;
         }
     }

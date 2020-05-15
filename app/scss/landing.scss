@@ -242,7 +242,7 @@
 
 @media (max-width: 1454px) {
     .landing {
-        &.products {
+        .products {
             align-items: stretch;
         }
 
@@ -258,7 +258,7 @@
 
 @media (max-width: 1230px) {
     .landing {
-        &.advantages {
+        .advantages {
             padding: 7px 40px;
         }
 
@@ -274,7 +274,8 @@
             }
         }
 
-        .clients__text, .producers__text {
+        .clients__text,
+        .producers__text {
             font-size: 18px;
             line-height: 26px;
             margin-left: 0;
@@ -283,10 +284,9 @@
     }
 }
 
-
 @media (max-width: 1156px) {
     .landing {
-        &.products {
+        .products {
             flex-wrap: wrap;
             justify-content: space-around;
         }
@@ -301,11 +301,6 @@
                 height: auto;
             }
         }
-
-        .nav {
-            display: none;
-        }
-
     }
 }
 
@@ -313,13 +308,15 @@
     .landing {
         .serv {
             max-width: 300px;
-        }        
+        }
     }
 }
 
 @media (max-width: 780px) {
     .landing {
-        .services__title, .producers__title, .clients__title {
+        .services__title,
+        .producers__title,
+        .clients__title {
             font-size: 28px;
         }
 
@@ -338,7 +335,9 @@
 
 @media (max-width: 400px) {
     .landing {
-        .services__title, .producers__title, .clients__title {
+        .services__title,
+        .producers__title,
+        .clients__title {
             font-size: 24px;
         }
 

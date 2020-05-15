@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 viewPort: data.viewPort,
                 mapId: 'russian-map',
-                width: 862,
-                height: 497,
+                width: '100%',
+                height: 'auto',
                 // дефолтовые атрибуты для контуров регионов
                 defaultAttr: {
                     fill: '#0053a1', // цвет которым закрашивать

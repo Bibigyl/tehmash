@@ -1,5 +1,7 @@
 .products {
-    display: flex;
+    &__section {
+        display: flex;
+    }
 
     &__nav {
         width: 30%;
@@ -52,7 +54,7 @@
         &__subli {
             display: block;
             padding: 10px;
-            
+
             a {
                 color: $dark;
                 font-size: 18px;
@@ -91,6 +93,116 @@
             &_active a {
                 font-weight: bold;
             }
+        }
+    }
+
+    &__up {
+        display: none;
+        position: sticky;
+        width: 45px;
+        height: 45px;
+        border-radius: 100%;
+        background-color: #fded3a;
+        top: 92vh;
+        float: right;
+        margin-left: auto;
+        opacity: 0.8;
+        transform: translate(-30px, -30px);
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 18px;
+            left: 17px;
+            border: solid $dark;
+            border-width: 0 2px 2px 0;
+            display: block;
+            padding: 5px;
+            transform: rotate(-135deg);
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .products {
+        &__section {
+            display: block;
+        }
+
+        &__nav {
+            float: left;
+            margin-right: 70px;
+            margin-bottom: 70px;
+        }
+
+        &__text {
+            width: 100%;
+            padding-right: 70px;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .products {
+        &__nav {
+            float: none;
+            margin-right: auto;
+            margin-left: auto;
+            margin-bottom: 70px;
+        }
+
+        &__text {
+            width: 100%;
+            padding-right: 40px;
+            padding-left: 40px;
+        }
+
+        .nav {
+            margin-bottom: 0;
+
+            &__subul {
+                border: none;
+            }
+
+            &__subli {
+                padding: 5px;
+            }
+        }
+
+        &__up {
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .products {
+        .nav {
+            width: 100%;
+            min-width: 0px;
+            border-bottom: 1px solid $dark;
+
+            * {
+                text-align: center;
+            }
+
+            &__subul {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: none;
+                padding-right: 20px;
+                padding-left: 20px;
+            }
+
+            &__title {
+                padding-right: 20px;
+                padding-left: 20px;
+            }
+        }
+
+        &__text {
+            padding-right: 20px;
+            padding-left: 20px;
         }
     }
 }

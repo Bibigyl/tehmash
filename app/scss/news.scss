@@ -1,6 +1,8 @@
 .news {
-    padding-top: 40px;
-    padding-bottom: 80px;
+    &__container {
+        padding-top: 40px;
+        padding-bottom: 80px;
+    }
 
     &__title {
         font-size: 33px;
@@ -53,9 +55,11 @@
         }
 
         &__date {
-            float: left;
+            position: absolute;
+            bottom: 0;
+            left: 0;
             width: 80px;
-            height: 80px;
+            height: 100%;
             text-align: center;
             padding: 14px 10px;
             font-size: 12px;
@@ -72,6 +76,8 @@
             line-height: 18px;
             text-decoration: underline;
             background: $yellow;
+            overflow: hidden;
+            position: relative;
 
             span {
                 display: block;
@@ -80,6 +86,7 @@
 
             a {
                 color: $dark;
+                text-overflow: ellipsis;
             }
         }
 
@@ -87,6 +94,7 @@
             font-size: 16px;
             line-height: 20px;
             padding: 16px 26px 14px;
+            text-overflow: ellipsis;
         }
 
         &__more {
@@ -115,11 +123,13 @@
 
         .pagination {
             display: flex;
+            flex-wrap: wrap;
         }
 
         .page-item {
             margin-right: 4px;
             margin-left: 4px;
+            margin-bottom: 15px;
         }
 
         .page-link {
@@ -147,5 +157,20 @@
                 cursor: default;
             }
         }
+    }
+}
+
+@media (max-width: 1122px) {
+    .news__cards {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 760px) {
+    .news .card {
+        margin-bottom: 30px;
+    }
+    .news .card__img {
+        height: 160px;
     }
 }

@@ -105,8 +105,10 @@
         }
 
         &__scheme {
-            height: 615px;
-
+            // удалить!
+            //height: 615px;
+            width: 100%;
+            max-width: 922px;
         }
     }
 
@@ -115,8 +117,12 @@
         padding-bottom: 83px;
 
         &__logo {
-            width: 590px;
-            height: 82px;
+            // удалить
+            //width: 590px;
+            //height: 82px;
+            width: 100%;
+            max-width: 590px;
+
             display: block;
             margin-left: auto;
             margin-right: auto;
@@ -191,4 +197,70 @@
             line-height: 27px;
         }
     }
+}
+
+@media (max-width: 700px) {
+    .contacts {
+        .employees {
+            flex-wrap: wrap;
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .main {
+            &__main-title {
+                font-size: 26px;
+            }
+
+            &__title {
+                font-size: 22px;
+            }
+
+            &__text {
+                font-size: 18px;
+                line-height: 26px;
+            }
+
+            &__site {
+                font-size: 24px;
+                font-weight: bold;
+            }
+
+            .emp__phone {
+                font-size: 22px;
+            }
+
+            &__emp {
+                margin-bottom: 50px;
+            }
+        }
+
+        .info {
+            overflow: hidden;
+
+            &__title {
+                font-size: 26px;
+            }
+
+            &__text, &__text_small, &__item {
+                font-size: 18px;
+                line-height: 26px;
+                margin-bottom: 15px;
+            }
+
+            &__text_last {
+                margin-bottom: 40px;
+            }
+
+            &__text_small {
+                margin-bottom: 3px;
+            }
+
+            &__site {
+                font-size: 24px;
+                font-weight: bold;
+            }
+        }
+    }
+
 }
