@@ -4,7 +4,12 @@ $accent: orange; // Accent Color
 $fontsize: 16px; // Body Font Size
 $textcolor: #333; // Text Color
 $system: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Font Family
-$roboto: Roboto, sans-serif; // Roboto Font Family
+$roboto: Roboto; // Roboto Font Family
+
+$fontPrim: Pragmatica;
+$fontSec: Pragmatica;
+
+
 
 $blue: #2265AC;
 $blueDemiDark: #295290;
@@ -40,7 +45,6 @@ $gutter: $grid-gutter-width;
 }
 
 
-//font-family: 'Yanone Kaffeesatz', sans-serif;
 
 @include font('Roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2');
 @include font('Roboto', italic, 400, '../fonts/roboto-italic-webfont.woff2');
@@ -67,7 +71,7 @@ input, textarea {
 }
 
 body {
-	font-family: $roboto;
+	font-family: $fontPrim, $roboto;
 	font-size: $fontsize;
 	min-width: 320px;
 	position: relative;
@@ -75,4 +79,90 @@ body {
 	overflow-x: hidden;
     color: $textcolor;
     background-color: $light;
+}
+
+
+// Fonts
+// Pragmatica
+
+@font-face {
+    font-family: 'Pragmatica';
+    src: url('../fonts/Pragmatica/Pragmatica-Book.eot');
+    src: local('Pragmatica Book'), local('Pragmatica-Book'),
+        url('../fonts/Pragmatica/Pragmatica-Book.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Pragmatica/Pragmatica-Book.woff2') format('woff2'),
+        url('../fonts/Pragmatica/Pragmatica-Book.woff') format('woff'),
+        url('../fonts/Pragmatica/Pragmatica-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pragmatica';
+    src: url('../fonts/Pragmatica/Pragmatica-Bold.eot');
+    src: local('Pragmatica Bold'), local('Pragmatica-Bold'),
+        url('../fonts/Pragmatica/Pragmatica-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Pragmatica/Pragmatica-Bold.woff2') format('woff2'),
+        url('../fonts/Pragmatica/Pragmatica-Bold.woff') format('woff'),
+        url('../fonts/Pragmatica/Pragmatica-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+
+// Helios
+
+// Helios Extra Compressed
+@font-face {
+    font-family: 'HeliosCompressedC';
+    src: url('../fonts/Helios/HeliosCompressedC.eot');
+    src: local('HeliosCompressedC'),
+        url('../fonts/Helios/HeliosCompressedC.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Helios/HeliosCompressedC.woff2') format('woff2'),
+        url('../fonts/Helios/HeliosCompressedC.woff') format('woff'),
+        url('../fonts/Helios/HeliosCompressedC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+// Helios Condensed Bold
+@font-face {
+    font-family: 'HeliosCondC';
+    src: url('../fonts/Helios/HeliosCondC-Bold.eot');
+    src: local('HeliosCondC Bold'), local('HeliosCondC-Bold'),
+        url('../fonts/Helios/HeliosCondC-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Helios/HeliosCondC-Bold.woff2') format('woff2'),
+        url('../fonts/Helios/HeliosCondC-Bold.woff') format('woff'),
+        url('../fonts/Helios/HeliosCondC-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+// Helios Condensed Bold Italic
+@font-face {
+    font-family: 'HeliosCondC';
+    src: url('../fonts/Helios/HeliosCondC-BoldItalic.eot');
+    src: local('HeliosCondC Bold Italic'), local('HeliosCondC-BoldItalic'),
+        url('../fonts/Helios/HeliosCondC-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Helios/HeliosCondC-BoldItalic.woff2') format('woff2'),
+        url('../fonts/Helios/HeliosCondC-BoldItalic.woff') format('woff'),
+        url('../fonts/Helios/HeliosCondC-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+// Helios Condensed Black
+@font-face {
+    font-family: 'HeliosCondBlackC';
+    src: url('../fonts/Helios/HeliosCondBlackC.eot');
+    src: local('HeliosCondBlackC'),
+        url('../fonts/Helios/HeliosCondBlackC.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Helios/HeliosCondBlackC.woff2') format('woff2'),
+        url('../fonts/Helios/HeliosCondBlackC.woff') format('woff'),
+        url('../fonts/Helios/HeliosCondBlackC.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
 }

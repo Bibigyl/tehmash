@@ -74,7 +74,9 @@
         }
 
         &__text {
-            font-size: 20px;
+            font-family: 'HeliosCondBlackC';
+            font-size: 21px;
+            line-height: 23px;
             text-transform: uppercase;
         }
     }
@@ -105,7 +107,7 @@
             font-size: 22px;
             text-align: center;
             padding: 15px;
-            height: 210px;
+            height: 190px;
             display: table-cell;
             vertical-align: middle;
         }
@@ -165,8 +167,11 @@
         }
 
         p {
-            font-size: 16px;
+            font-size: 17px;
             line-height: 18px;
+            font-family: 'HeliosCondC';
+            font-weight: bold;
+            font-style: normal;
         }
     }
 
@@ -198,9 +203,9 @@
         }
 
         &__item {
-            width: 270px;
-            height: 90px;
-            margin: 0 30px 50px;
+            max-width: 310px;
+            max-height: 60px;
+            margin: 0px 40px 80px 40px;
         }
     }
 
@@ -231,9 +236,9 @@
         }
 
         &__item {
-            width: 270px;
-            height: 90px;
-            margin: 0 30px 50px;
+            width: 256px;
+            align-self: baseline;
+            margin: 0px 40px 80px 40px;
         }
     }
 }
@@ -297,7 +302,7 @@
 
             &__text {
                 font-size: 17px;
-                padding: 30px 15px;
+                padding: 30px 12px;
                 height: auto;
             }
         }
@@ -330,6 +335,22 @@
             margin-right: 0;
             margin-left: 0;
         }
+
+        .producers__item,
+        .clients__item {
+            width: auto;
+            max-width: 200px;
+            max-height: 40px;
+            margin: 5px 40px 80px 40px;
+            align-self: center;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .landing .advantage__item {
+        margin-left: 30px;
+        margin-right: 30px;
     }
 }
 

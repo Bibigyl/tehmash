@@ -105,35 +105,41 @@ document.addEventListener('DOMContentLoaded', function () {
         delegate: 'a',
         type:'image',
 		gallery: {
-			enabled: true
+            enabled: true,
+            tCounter: '%curr% из %total%'
 		},
 		zoom: {
 			enabled: true,
 			duration: 300
-		}
+        }
     });
 
     // Burger
+    let isMobileMenuOpen = false;
     $('.header__burger').on('click', () => {
 
+        if (!isMobileMenuOpen) {
+            $('.header__sticky-nav').addClass('header__sticky-nav_open');
+        }
+        
         $('.header__nav').fadeToggle(200, () => {
-            //$('.header__nav').toggleClass('visible')
-        })
-    })
+            if (isMobileMenuOpen) {
+                $('.header__sticky-nav').removeClass('header__sticky-nav_open');
+            }
+            isMobileMenuOpen = !isMobileMenuOpen;
+        });
+    });
 
     // Mobil Landing
     if (window.screen.availWidth <= 780) {
         $('.producers__items').slick({
             arrows: false,
             dots: true,
-            //prevArrow: '<button type="button" class="slick-prev slick__arrow slick__arrow_prev">&lt;</button>',
-            //nextArrow: '<button type="button" class="slick-next slick__arrow slick__arrow_next">&gt;</button>',
             dotsClass: 'slick__dots',
             infinite: true,
             autoplay: true,
             centerMode: true,
             centerPadding: '60px',
-            //slidesToShow: 3,
             variableWidth: true
         });
 
@@ -145,9 +151,10 @@ document.addEventListener('DOMContentLoaded', function () {
             infinite: true,
             autoplay: true,
             centerMode: true,
-            //centerPadding: '60px',
-            //slidesToShow: 3,
+            centerPadding: '60px',
+            variableWidth: true
         });
+
 
         $('.documents .docs').slick({
             arrows: false,

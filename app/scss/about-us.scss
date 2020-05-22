@@ -77,8 +77,11 @@
 
     .doc__img {
         width: 224px;
-        height: 312px;
         margin: 0 10px 63px 10px;
+    }
+
+    .doc__link {
+        cursor: zoom-in;
     }
 }
 
@@ -110,9 +113,9 @@
         }
 
         .doc__img {
-            margin: 0 20px 75px 20px;
+            margin: 30px 20px 75px 20px;
             height: 200px;
-            width: 100px;
+            width: auto;
         }
 
         .slick__dots {

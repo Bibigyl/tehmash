@@ -12,6 +12,60 @@
         width: 70%;
         padding: 50px 150px 50px 70px;
         font-size: 18px;
+
+        table {
+            border-collapse: collapse;
+        }
+        td,
+        th {
+            padding: 3px;
+            border: 1px solid $dark;
+        }
+        th {
+            background: lighten($color: $blue, $amount: 50);
+        }
+    }
+
+    &__title {
+        font-size: 33px;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: bold;
+        color: $blueDark;
+        margin-bottom: 60px;
+    }
+
+    &__images {
+        width: 100%;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    &__img {
+        width: 100%;
+        height: auto;
+        transition: 1s;
+        max-width: 300px;
+        margin: 0 20px 40px;
+    }
+
+    &__img-wrap {
+        overflow: hidden;
+        /*         outline: 10px solid rgba($blue, 0.5);
+        outline-offset: -10px; */
+
+        &:hover {
+            /*             outline: 10px solid rgba($blue, 0.5);
+            outline-offset: -10px; */
+
+            .products__img {
+                transform: scale(1.1);
+            }
+        }
     }
 
     .nav {
