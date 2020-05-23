@@ -50,25 +50,20 @@
         height: auto;
         transition: 1s;
         max-width: 300px;
-        margin: 0 20px 40px;
     }
 
     &__img-wrap {
         overflow: hidden;
-        /*         outline: 10px solid rgba($blue, 0.5);
-        outline-offset: -10px; */
+        margin: 10px;
 
         &:hover {
-            /*             outline: 10px solid rgba($blue, 0.5);
-            outline-offset: -10px; */
-
             .products__img {
                 transform: scale(1.1);
             }
         }
     }
 
-    .nav {
+    &__nav .nav {
         &__title {
             width: 100%;
             text-transform: uppercase;
@@ -82,7 +77,10 @@
 
             span {
                 width: 100%;
-                max-width: 300px;
+                max-width: 340px;
+                display: block;
+                margin-left: auto;
+                text-align: left;
             }
         }
 
@@ -152,22 +150,24 @@
 
     &__up {
         display: none;
+        position: -webkit-sticky;
         position: sticky;
-        width: 45px;
-        height: 45px;
+        width: 60px;
+        height: 60px;
         border-radius: 100%;
         background-color: #fded3a;
-        top: 92vh;
-        float: right;
+        /* top: 90vh; */
+        top: 90%;
+        /* float: right; */
         margin-left: auto;
         opacity: 0.8;
-        transform: translate(-30px, -30px);
+        transform: translate(-10px, -30px);
 
         &:after {
             content: '';
             position: absolute;
-            top: 18px;
-            left: 17px;
+            top: 25px;
+            left: 24px;
             border: solid $dark;
             border-width: 0 2px 2px 0;
             display: block;
@@ -251,6 +251,11 @@
             &__title {
                 padding-right: 20px;
                 padding-left: 20px;
+
+                span {
+                    max-width: none;
+                    text-align: center;
+                }
             }
         }
 

@@ -141,6 +141,10 @@
                 font-size: 20px;
                 color: lighten($dark, 35%);
             }
+
+            &:focus {
+                outline: 2px solid #749de4;
+            }
         }
 
         input {
@@ -168,6 +172,10 @@
             padding: 7px 66px;
             overflow: hidden;
             position: relative;
+
+            &:focus {
+                outline: 2px solid #749de4;
+            }
         }
 
         &__button:after {

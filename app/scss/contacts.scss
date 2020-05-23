@@ -51,6 +51,13 @@
             margin-bottom: 31px;
         }
 
+        &__logo {
+            width: 150px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+        }
+
         &__surname {
             font-size: 20px;
             text-transform: uppercase;
@@ -87,7 +94,6 @@
 
         &__logo {
             width: 250px;
-            height: 68px;
             margin-left: auto;
             margin-right: auto;
             display: block;
@@ -105,10 +111,9 @@
         }
 
         &__scheme {
-            // удалить!
-            //height: 615px;
             width: 100%;
-            max-width: 922px;
+            //max-width: 922px;
+            max-width: 700px;
         }
     }
 
@@ -117,11 +122,9 @@
         padding-bottom: 83px;
 
         &__logo {
-            // удалить
-            //width: 590px;
-            //height: 82px;
             width: 100%;
-            max-width: 590px;
+            //max-width: 590px;
+            max-width: 500px;
 
             display: block;
             margin-left: auto;
@@ -130,7 +133,7 @@
         }
 
         &__text {
-            font-size: 24px;
+            font-size: 22px;
             line-height: 31px;
             margin-bottom: 32px;
 
@@ -158,7 +161,7 @@
         }
 
         &__item {
-            font-size: 24px;
+            font-size: 22px;
             line-height: 33px;
             list-style-type: none;
             margin-bottom: 30px;
@@ -168,7 +171,7 @@
             }
 
             a {
-                color: $dark;  
+                color: $dark;
             }
         }
 
@@ -180,8 +183,8 @@
             margin-bottom: 38px;
         }
 
-        &__phone {
-
+        &__mail-link {
+            color: $blue;
         }
 
         &__post-mail {
@@ -192,6 +195,8 @@
         }
 
         &__site {
+            display: block;
+            color: #333;
             text-align: center;
             font-size: 27px;
             line-height: 27px;
@@ -242,7 +247,13 @@
                 font-size: 26px;
             }
 
-            &__text, &__text_small, &__item {
+            &__logo {
+                margin-bottom: 40px;
+            }
+
+            &__text,
+            &__text_small,
+            &__item {
                 font-size: 18px;
                 line-height: 26px;
                 margin-bottom: 15px;
@@ -262,5 +273,4 @@
             }
         }
     }
-
 }

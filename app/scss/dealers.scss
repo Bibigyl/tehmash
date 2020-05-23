@@ -149,8 +149,8 @@
         }
 
         &__img {
-            width: 200px;
-            height: 60px;
+            max-width: 200px;
+            max-height: 58px;
             margin-bottom: 18px;
         }
 
@@ -159,11 +159,11 @@
         }
 
         &__district-name {
-            width: 130px;
+            width: 140px;
         }
 
         &__phones {
-            width: 130px;
+            width: 140px;
         }
 
         &__phone {
@@ -172,7 +172,7 @@
         }
 
         &__site {
-            width: 130px;
+            width: 160px;
         }
 
         &__site-address {
@@ -193,7 +193,7 @@
         }
 
         &__info {
-            width: 200px;
+            width: 228px;
 
             > * {
                 line-height: 24px;
