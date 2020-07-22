@@ -327,6 +327,32 @@
             color: $yellow;
         }
     }
+
+    &__socs {
+        display: flex;
+    }
+
+    &__soc {
+        width: 34px;
+        height: 34px;
+        margin: 20px 5px 0;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .15s;
+
+        img {
+            height: 21px;
+        }
+
+        &:hover {
+            background-color: $yellow;
+            transition: .1s;
+        }
+    }
 }
 
 .back {
@@ -511,6 +537,10 @@
         }
 
         &__content {
+            justify-content: center;
+        }
+
+        &__socs {
             justify-content: center;
         }
     }
