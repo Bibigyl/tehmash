@@ -134,8 +134,9 @@
 
         &__text {
             display: flex;
-            justify-content: center;
             align-items: center;
+            text-align: center;
+            justify-content: center;
             text-transform: uppercase;
             font-weight: bold;
             font-size: 22px;

@@ -95,7 +95,7 @@
 
         &__subul {
             width: 100%;
-            max-width: 330px;
+            max-width: 368px;
             margin-left: auto;
             border-right: 1px solid #e4e4e4;
             margin-right: 2px;
@@ -112,33 +112,24 @@
                 font-size: 18px;
                 position: relative;
                 z-index: 1;
-                transition: all 300ms ease;
+                line-height: 22px;
 
                 &:before {
                     content: '';
+                    display: block;
+                    width: 10px;
+                    height: 10px;
                     position: absolute;
-                    bottom: -8px;
-                    left: auto;
-                    right: 0;
-                    height: 3px;
-                    width: 0%;
-                    background: lighten($color: $yellow, $amount: 20%);
-                    z-index: 0;
-                    transition: all 300ms ease;
+                    top: 6px;
+                    left: -21px;
+                    background-color: $yellow;
+                    border-radius: 100%;
                 }
             }
 
             &:hover {
                 a {
-                    text-decoration: none;
-                    color: #2f2f2f;
-
-                    &:before {
-                        content: '';
-                        width: 100%;
-                        left: 0;
-                        right: 0;
-                    }
+                    text-decoration: underline;
                 }
             }
 
